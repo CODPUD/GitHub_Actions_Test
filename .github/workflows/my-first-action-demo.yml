@@ -1,8 +1,8 @@
 name: My First Action
 on: [push]
 jobs:
-  echo-job-demo
-    runs-on: ubuntu_latest
+  echo-job-demo:
+    runs-on: ubuntu-latest
     steps: 
       - run: echo "Action started!"
       - run: echo "Repository name > ${{ github.repository }} && branch name ${{ github.ref }}"
