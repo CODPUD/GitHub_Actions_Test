@@ -1,0 +1,12 @@
+name: My First Action
+on: [push]
+jobs:
+  echo-job-demo
+    runs-on: ubuntu_latest
+    steps: 
+      - run: echo "Action started!"
+      - run: echo "Repository name > ${{ github.repository }} && branch name ${{ github.ref }}"
+      - run: echo "Job is running on ${{ runner.os }}"
+      - run: echo "Job is finished!"
+    
+    
