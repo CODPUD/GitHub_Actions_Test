@@ -1,0 +1,16 @@
+name: Github Actions Demo
+on: [push]
+jobs:
+  Explore-Github-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job started by ${{ github.event_name }}."
+      - run: echo "The job is running on ${{ runner.os }}."
+      - run: echo "The name of the repository is ${{ github.repository }} and branch name is ${{ github.ref }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "${{ github.repository }} has been cloned to runner."
+      - name: List files in repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: "The job status is ${{ job.status }}"
